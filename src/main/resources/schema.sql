@@ -1,0 +1,24 @@
+-- Schema for Aegis Auto Chess
+-- Tables matching JPA entities
+
+CREATE TABLE IF NOT EXISTS units (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    tier INTEGER NOT NULL,
+    cost INTEGER NOT NULL,
+    traits TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS level_tier_probabilities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    player_level INTEGER NOT NULL,
+    tier INTEGER NOT NULL,
+    weight INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS players (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    gold INTEGER NOT NULL DEFAULT 0,
+    level INTEGER NOT NULL DEFAULT 1
+);

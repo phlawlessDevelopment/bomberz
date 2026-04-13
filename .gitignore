@@ -1,0 +1,20 @@
+# Maven build output
+target/
+
+# IDE files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# SQLite database files
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Swarm plan copies (auto-generated)
+SWARM_PLAN.json
+SWARM_PLAN.md

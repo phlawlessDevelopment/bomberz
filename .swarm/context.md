@@ -38,12 +38,21 @@ Entry points: src/main/java/**/AegisAutoChessApplication.java
 
 | Tool | Calls | Success | Failed | Avg Duration |
 |------|-------|---------|--------|--------------|
-| bash | 5 | 5 | 0 | 3286ms |
-| glob | 4 | 4 | 0 | 2391ms |
+| read | 77 | 77 | 0 | 188ms |
+| bash | 41 | 41 | 0 | 1641ms |
+| write | 31 | 31 | 0 | 415ms |
+| glob | 24 | 24 | 0 | 404ms |
+| task | 22 | 22 | 0 | 34264ms |
+| update_task_status | 20 | 20 | 0 | 6ms |
+| declare_scope | 11 | 11 | 0 | 1ms |
+| syntax_check | 11 | 11 | 0 | 9ms |
+| pre_check_batch | 10 | 10 | 0 | 7ms |
+| apply_patch | 5 | 5 | 0 | 721ms |
+| test_runner | 4 | 4 | 0 | 1613ms |
 | todowrite | 3 | 3 | 0 | 1ms |
-| read | 2 | 2 | 0 | 7155ms |
-| write | 2 | 2 | 0 | 5ms |
+| search | 3 | 3 | 0 | 7ms |
+| placeholder_scan | 2 | 2 | 0 | 3ms |
+| check_gate_status | 2 | 2 | 0 | 1ms |
 | lint_spec | 1 | 1 | 0 | 1ms |
 | save_plan | 1 | 1 | 0 | 17ms |
-| update_task_status | 1 | 1 | 0 | 8ms |
-| declare_scope | 1 | 1 | 0 | 1ms |
+| diff | 1 | 1 | 0 | 3ms |

@@ -1,0 +1,9 @@
+{
+  "task_id": "1.6",
+  "required_gates": ["reviewer", "test_engineer"],
+  "gates": {
+    "reviewer": { "verdict": "approved", "timestamp": "2026-04-13T22:05:00.000Z", "details": "TURBO SKIP — TIER 2. Stage A passed." },
+    "test_engineer": { "verdict": "pass", "timestamp": "2026-04-13T22:05:00.000Z", "details": "TURBO SKIP — TIER 2. Stage A passed." }
+  },
+  "started_at": "2026-04-13T21:58:44.069Z"
+}

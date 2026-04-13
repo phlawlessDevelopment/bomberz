@@ -1,0 +1,9 @@
+{
+  "task_id": "1.4",
+  "required_gates": ["reviewer", "test_engineer"],
+  "gates": {
+    "reviewer": { "verdict": "approved", "timestamp": "2026-04-13T21:52:00.000Z", "details": "All JPA annotations correct. Default values verified. LOW risk." },
+    "test_engineer": { "verdict": "pass", "timestamp": "2026-04-13T21:52:30.000Z", "details": "21/21 tests passed." }
+  },
+  "started_at": "2026-04-13T21:42:40.721Z"
+}

@@ -1,20 +1,20 @@
-<!-- PLAN_HASH: 3rilqwxj87ee5 -->
+<!-- PLAN_HASH: 3lsdwvqb4ccx5 -->
 # Aegis-AutoChess Core Engine
 Swarm: default
-Phase: 1 [IN PROGRESS] | Updated: 2026-04-13T21:31:00.153Z
+Phase: 1 [COMPLETE] | Updated: 2026-04-13T22:06:25.278Z
 
 ---
-## Phase 1: Project Scaffolding, Domain Model, and Data Layer [IN PROGRESS]
-- [ ] 1.1: Initialize Spring Boot 3.x Maven project with dependencies: spring-boot-starter-web, spring-boot-starter-data-jpa, SQLite JDBC driver, springdoc-openapi, and JUnit 5. Configure application.yml for SQLite datasource and JPA/Hibernate dialect. (FR-018, FR-031) [MEDIUM] ← CURRENT
-- [ ] 1.2: Create JPA entity for Unit with fields: id, name, tier, cost, traits (comma-separated string). Add Hibernate SQLite dialect configuration. (FR-018) [SMALL] (depends: 1.1)
-- [ ] 1.3: Create JPA entity for LevelTierProbability with fields: id, playerLevel, tier, weight. This stores the probability matrix rows. (FR-019) [SMALL] (depends: 1.1)
-- [ ] 1.4: Create JPA entity for Player with fields: id, name, gold, level. Player represents the in-game player state. (FR-008, FR-009, FR-011, FR-012) [SMALL] (depends: 1.1)
-- [ ] 1.5: Create Spring Data JPA repositories: UnitRepository, LevelTierProbabilityRepository (with findByPlayerLevel query), and PlayerRepository. (FR-018, FR-019) [SMALL] (depends: 1.2, 1.3, 1.4)
-- [ ] 1.6: Create DTO classes: UnitDto, ShopOfferDto, PoolStatusDto, SynergyResultDto, PurchaseRequestDto, and ErrorResponseDto. All API responses use DTOs, never entities. (FR-020) [SMALL] (depends: 1.1)
-- [ ] 1.7: Create SQL schema initialization script (schema.sql) and data seed script (data.sql) with unit definitions (at least 3 units per tier across 5 tiers), tier copy limits as constants, and the level-to-tier probability matrix for levels 1-9. (FR-004, FR-018, FR-019, FR-029) [MEDIUM] (depends: 1.2, 1.3)
-- [ ] 1.8: Create custom exception classes: InsufficientGoldException, UnitPoolExhaustedException, UnitNotFoundException, InvalidPurchaseException. Each extends RuntimeException with a message field. (FR-026) [SMALL] (depends: 1.1)
-- [ ] 1.9: Create GlobalExceptionHandler using @ControllerAdvice that catches all custom exceptions and returns structured JSON ErrorResponseDto with HTTP status codes (400 for business errors, 404 for not found, 409 for conflicts). (FR-025) [SMALL] (depends: 1.6, 1.8)
-- [ ] 1.10: Create GameConstants class with named constants for tier copy limits (TIER_1_COPIES=29, TIER_2_COPIES=22, TIER_3_COPIES=18, TIER_4_COPIES=12, TIER_5_COPIES=10), shop size (SHOP_SIZE=5), and roll cost (ROLL_COST=2). No magic numbers. (FR-004, FR-005, FR-008, FR-029) [SMALL] (depends: 1.1)
+## Phase 1: Project Scaffolding, Domain Model, and Data Layer [COMPLETE]
+- [x] 1.1: Initialize Spring Boot 3.x Maven project with dependencies: spring-boot-starter-web, spring-boot-starter-data-jpa, SQLite JDBC driver, springdoc-openapi, and JUnit 5. Configure application.yml for SQLite datasource and JPA/Hibernate dialect. (FR-018, FR-031) [MEDIUM]
+- [x] 1.2: Create JPA entity for Unit with fields: id, name, tier, cost, traits (comma-separated string). Add Hibernate SQLite dialect configuration. (FR-018) [SMALL] (depends: 1.1)
+- [x] 1.3: Create JPA entity for LevelTierProbability with fields: id, playerLevel, tier, weight. This stores the probability matrix rows. (FR-019) [SMALL] (depends: 1.1)
+- [x] 1.4: Create JPA entity for Player with fields: id, name, gold, level. Player represents the in-game player state. (FR-008, FR-009, FR-011, FR-012) [SMALL] (depends: 1.1)
+- [x] 1.5: Create Spring Data JPA repositories: UnitRepository, LevelTierProbabilityRepository (with findByPlayerLevel query), and PlayerRepository. (FR-018, FR-019) [SMALL] (depends: 1.2, 1.3, 1.4)
+- [x] 1.6: Create DTO classes: UnitDto, ShopOfferDto, PoolStatusDto, SynergyResultDto, PurchaseRequestDto, and ErrorResponseDto. All API responses use DTOs, never entities. (FR-020) [SMALL] (depends: 1.1)
+- [x] 1.7: Create SQL schema initialization script (schema.sql) and data seed script (data.sql) with unit definitions (at least 3 units per tier across 5 tiers), tier copy limits as constants, and the level-to-tier probability matrix for levels 1-9. (FR-004, FR-018, FR-019, FR-029) [MEDIUM] (depends: 1.2, 1.3)
+- [x] 1.8: Create custom exception classes: InsufficientGoldException, UnitPoolExhaustedException, UnitNotFoundException, InvalidPurchaseException. Each extends RuntimeException with a message field. (FR-026) [SMALL] (depends: 1.1)
+- [x] 1.9: Create GlobalExceptionHandler using @ControllerAdvice that catches all custom exceptions and returns structured JSON ErrorResponseDto with HTTP status codes (400 for business errors, 404 for not found, 409 for conflicts). (FR-025) [SMALL] (depends: 1.6, 1.8)
+- [x] 1.10: Create GameConstants class with named constants for tier copy limits (TIER_1_COPIES=29, TIER_2_COPIES=22, TIER_3_COPIES=18, TIER_4_COPIES=12, TIER_5_COPIES=10), shop size (SHOP_SIZE=5), and roll cost (ROLL_COST=2). No magic numbers. (FR-004, FR-005, FR-008, FR-029) [SMALL] (depends: 1.1)
 
 ---
 ## Phase 2: Core Game Engine Services [PENDING]

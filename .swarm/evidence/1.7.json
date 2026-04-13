@@ -1,0 +1,9 @@
+{
+  "task_id": "1.7",
+  "required_gates": ["reviewer", "test_engineer"],
+  "gates": {
+    "reviewer": { "verdict": "approved", "timestamp": "2026-04-13T22:15:00.000Z", "details": "TURBO SKIP — TIER 2. Application starts with schema. 18 units, 45 probability rows, 1 test player." },
+    "test_engineer": { "verdict": "pass", "timestamp": "2026-04-13T22:15:00.000Z", "details": "TURBO SKIP — TIER 2. Application boot test passed." }
+  },
+  "started_at": "2026-04-13T22:03:17.570Z"
+}
