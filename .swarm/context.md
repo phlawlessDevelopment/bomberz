@@ -38,21 +38,26 @@ Entry points: src/main/java/**/AegisAutoChessApplication.java
 
 | Tool | Calls | Success | Failed | Avg Duration |
 |------|-------|---------|--------|--------------|
-| read | 77 | 77 | 0 | 188ms |
-| bash | 41 | 41 | 0 | 1641ms |
-| write | 31 | 31 | 0 | 415ms |
-| glob | 24 | 24 | 0 | 404ms |
-| task | 22 | 22 | 0 | 34264ms |
-| update_task_status | 20 | 20 | 0 | 6ms |
-| declare_scope | 11 | 11 | 0 | 1ms |
-| syntax_check | 11 | 11 | 0 | 9ms |
-| pre_check_batch | 10 | 10 | 0 | 7ms |
+| read | 105 | 105 | 0 | 138ms |
+| bash | 59 | 59 | 0 | 1302ms |
+| write | 41 | 41 | 0 | 423ms |
+| glob | 33 | 33 | 0 | 295ms |
+| update_task_status | 28 | 28 | 0 | 5ms |
+| task | 27 | 27 | 0 | 32323ms |
+| declare_scope | 17 | 17 | 0 | 1ms |
+| syntax_check | 15 | 15 | 0 | 8ms |
+| pre_check_batch | 13 | 13 | 0 | 7ms |
 | apply_patch | 5 | 5 | 0 | 721ms |
+| todowrite | 4 | 4 | 0 | 2ms |
+| search | 4 | 4 | 0 | 7ms |
 | test_runner | 4 | 4 | 0 | 1613ms |
-| todowrite | 3 | 3 | 0 | 1ms |
-| search | 3 | 3 | 0 | 7ms |
+| grep | 3 | 3 | 0 | 8ms |
 | placeholder_scan | 2 | 2 | 0 | 3ms |
 | check_gate_status | 2 | 2 | 0 | 1ms |
 | lint_spec | 1 | 1 | 0 | 1ms |
 | save_plan | 1 | 1 | 0 | 17ms |
 | diff | 1 | 1 | 0 | 3ms |
+| write_retro | 1 | 1 | 0 | 4ms |
+| phase_complete | 1 | 1 | 0 | 26ms |
+| checkpoint | 1 | 1 | 0 | 7ms |
+| edit | 1 | 1 | 0 | 794ms |

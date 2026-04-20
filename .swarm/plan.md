@@ -1,7 +1,7 @@
-<!-- PLAN_HASH: 3lsdwvqb4ccx5 -->
+<!-- PLAN_HASH: iuf0zkbnccd5 -->
 # Aegis-AutoChess Core Engine
 Swarm: default
-Phase: 1 [COMPLETE] | Updated: 2026-04-13T22:06:25.278Z
+Phase: 1 [COMPLETE] | Updated: 2026-04-13T22:13:16.104Z
 
 ---
 ## Phase 1: Project Scaffolding, Domain Model, and Data Layer [COMPLETE]
@@ -17,10 +17,10 @@ Phase: 1 [COMPLETE] | Updated: 2026-04-13T22:06:25.278Z
 - [x] 1.10: Create GameConstants class with named constants for tier copy limits (TIER_1_COPIES=29, TIER_2_COPIES=22, TIER_3_COPIES=18, TIER_4_COPIES=12, TIER_5_COPIES=10), shop size (SHOP_SIZE=5), and roll cost (ROLL_COST=2). No magic numbers. (FR-004, FR-005, FR-008, FR-029) [SMALL] (depends: 1.1)
 
 ---
-## Phase 2: Core Game Engine Services [PENDING]
-- [ ] 2.1: Implement GlobalUnitPool @Component with ConcurrentHashMap-based thread-safe storage. Constructor loads all units from UnitRepository and initializes counts based on tier copy limits from GameConstants. Provides acquire(unitId) and release(unitId) atomic operations using AtomicInteger. (FR-001, FR-002, FR-003, FR-004, FR-027) [MEDIUM] (depends: 1.10, 1.5)
-- [ ] 2.2: Implement ShopService with weighted tier rolling logic. Method rollShop(playerId): loads player, deducts roll cost (2 gold), fetches probability matrix for player level, performs weighted random tier selection 5 times, selects random available unit from each tier via GlobalUnitPool. Returns list of ShopOfferDto. (FR-005, FR-006, FR-007, FR-008, FR-009, FR-027) [MEDIUM] (depends: 1.5, 1.6, 2.1)
-- [ ] 2.3: Implement PurchaseService to handle unit purchases. Method purchaseUnit(playerId, unitId): validates player has sufficient gold, validates unit is available in pool, atomically acquires from pool, deducts gold (cost = tier), adds unit to player bench. (FR-010, FR-011, FR-012, FR-013, FR-027) [MEDIUM] (depends: 1.5, 1.6, 1.8, 2.1)
+## Phase 2: Core Game Engine Services [IN PROGRESS]
+- [x] 2.1: Implement GlobalUnitPool @Component with ConcurrentHashMap-based thread-safe storage. Constructor loads all units from UnitRepository and initializes counts based on tier copy limits from GameConstants. Provides acquire(unitId) and release(unitId) atomic operations using AtomicInteger. (FR-001, FR-002, FR-003, FR-004, FR-027) [MEDIUM] (depends: 1.10, 1.5)
+- [x] 2.2: Implement ShopService with weighted tier rolling logic. Method rollShop(playerId): loads player, deducts roll cost (2 gold), fetches probability matrix for player level, performs weighted random tier selection 5 times, selects random available unit from each tier via GlobalUnitPool. Returns list of ShopOfferDto. (FR-005, FR-006, FR-007, FR-008, FR-009, FR-027) [MEDIUM] (depends: 1.5, 1.6, 2.1)
+- [x] 2.3: Implement PurchaseService to handle unit purchases. Method purchaseUnit(playerId, unitId): validates player has sufficient gold, validates unit is available in pool, atomically acquires from pool, deducts gold (cost = tier), adds unit to player bench. (FR-010, FR-011, FR-012, FR-013, FR-027) [MEDIUM] (depends: 1.5, 1.6, 1.8, 2.1)
 - [ ] 2.4: Create SynergyStrategy interface with method calculateBonus(int unitCount) returning SynergyBonus record. Implement four concrete strategies: WarriorSynergy (armor bonus at 2/4/6 thresholds), MageSynergy (spell power bonus), AssassinSynergy (critical strike bonus), RangerSynergy (attack speed bonus). Each is a @Component. (FR-015, FR-016, FR-017, FR-027) [MEDIUM] (depends: 1.1)
 - [ ] 2.5: Implement SynergyEngine @Service that receives all SynergyStrategy implementations via constructor injection (List<SynergyStrategy>). Method calculateSynergies(List<UnitDto> boardUnits): counts units per trait, applies matching strategy for each trait, returns list of SynergyResultDto with active synergies and their bonuses. (FR-014, FR-015, FR-027) [MEDIUM] (depends: 1.6, 2.4)
 

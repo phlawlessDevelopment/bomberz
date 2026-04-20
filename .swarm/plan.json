@@ -136,12 +136,12 @@
     {
       "id": 2,
       "name": "Core Game Engine Services",
-      "status": "pending",
+      "status": "in_progress",
       "tasks": [
         {
           "id": "2.1",
           "phase": 2,
-          "status": "pending",
+          "status": "completed",
           "size": "medium",
           "description": "Implement GlobalUnitPool @Component with ConcurrentHashMap-based thread-safe storage. Constructor loads all units from UnitRepository and initializes counts based on tier copy limits from GameConstants. Provides acquire(unitId) and release(unitId) atomic operations using AtomicInteger. (FR-001, FR-002, FR-003, FR-004, FR-027)",
           "depends": [
@@ -154,7 +154,7 @@
         {
           "id": "2.2",
           "phase": 2,
-          "status": "pending",
+          "status": "completed",
           "size": "medium",
           "description": "Implement ShopService with weighted tier rolling logic. Method rollShop(playerId): loads player, deducts roll cost (2 gold), fetches probability matrix for player level, performs weighted random tier selection 5 times, selects random available unit from each tier via GlobalUnitPool. Returns list of ShopOfferDto. (FR-005, FR-006, FR-007, FR-008, FR-009, FR-027)",
           "depends": [
@@ -168,7 +168,7 @@
         {
           "id": "2.3",
           "phase": 2,
-          "status": "pending",
+          "status": "completed",
           "size": "medium",
           "description": "Implement PurchaseService to handle unit purchases. Method purchaseUnit(playerId, unitId): validates player has sufficient gold, validates unit is available in pool, atomically acquires from pool, deducts gold (cost = tier), adds unit to player bench. (FR-010, FR-011, FR-012, FR-013, FR-027)",
           "depends": [
@@ -183,7 +183,7 @@
         {
           "id": "2.4",
           "phase": 2,
-          "status": "pending",
+          "status": "in_progress",
           "size": "medium",
           "description": "Create SynergyStrategy interface with method calculateBonus(int unitCount) returning SynergyBonus record. Implement four concrete strategies: WarriorSynergy (armor bonus at 2/4/6 thresholds), MageSynergy (spell power bonus), AssassinSynergy (critical strike bonus), RangerSynergy (attack speed bonus). Each is a @Component. (FR-015, FR-016, FR-017, FR-027)",
           "depends": [

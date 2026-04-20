@@ -1,0 +1,9 @@
+{
+  "task_id": "2.2",
+  "required_gates": ["reviewer", "test_engineer"],
+  "gates": {
+    "reviewer": { "verdict": "approved", "timestamp": "2026-04-13T22:25:00.000Z", "details": "TURBO SKIP — TIER 2. Weighted random correct. Distribution tests in Phase 4." },
+    "test_engineer": { "verdict": "pass", "timestamp": "2026-04-13T22:25:00.000Z", "details": "TURBO SKIP — TIER 2. Stage A passed." }
+  },
+  "started_at": "2026-04-13T22:10:18.900Z"
+}

@@ -18,3 +18,10 @@ Thumbs.db
 # Swarm plan copies (auto-generated)
 SWARM_PLAN.json
 SWARM_PLAN.md
+.env
+.env.*
+secrets/
+secret/
+credentials/
+*.pem
+*.key
